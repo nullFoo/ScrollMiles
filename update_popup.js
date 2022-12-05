@@ -7,7 +7,7 @@ setInterval(() => {
 2000);
 
 function updatePopup() {
-    chrome.storage.local.get(["scrolled_amount"]).then((result) => {
+    chrome.storage.local.get(["scrolled_amount"]).then((result = 0) => {
         console.log(result.scrolled_amount);
         document.getElementById("pix_scrolled").innerHTML = result.scrolled_amount;
         var cm = px2cm(result.scrolled_amount);
