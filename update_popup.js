@@ -15,6 +15,7 @@ setInterval(() => {
 function updatePopup() {
     chrome.storage.local.get(["scrolled_amount"]).then((result) => {
         console.log(result.scrolled_amount);
+        result.scrolled_amount ||= 0;
         document.getElementById("pix_scrolled").innerHTML = result.scrolled_amount;
         var pixels = result.scrolled_amount;
         var cmOrInch = imperial ? px2inch(pixels) : px2cm(pixels);
